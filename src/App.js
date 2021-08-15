@@ -47,7 +47,7 @@ class App extends React.Component {
           } 
 
           {this.state.showData &&
-            <p>{this.state.searchCity} <img src="{`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&center=<latitude>,<longitude>&zoom=<zoom>&size=<width>x<height>&format=<format>&maptype=<MapType>&markers=icon:<icon>|<latitude>,<longitude>&markers=icon:<icon>|<latitude>,<longitude>`
+            <p>{this.state.searchCity} <img src="{`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&center=Latitude [-90 to 90], Longitude [-180 to 180],<longitude>&zoom=[0 to 18]&size=300x300&format=jpg&maptype=<string>&markers=icon:<icon>|<latitude>,<longitude>&markers=icon:<icon>|<latitude>,<longitude>`
           }" alt="map" /> </p>
           }
           
