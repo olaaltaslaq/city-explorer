@@ -43,11 +43,11 @@ class App extends React.Component {
           </form>
 
           {this.state.showData &&
-            <p>{this.state.searchCity} Lat:{this.state.cityData.lat} /Lon:{this.state.cityData.lon} </p>
+            <p>{this.state.searchCity} Lat:{this.state.cityData.lat} / Lon:{this.state.cityData.lon} </p>
           } 
-          
+
           {this.state.showData &&
-            <p>{this.state.searchCity} <img src="{'https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&center=<latitude>,<longitude>&zoom=<zoom>&size=<width>x<height>&format=<format>&maptype=<MapType>&markers=icon:<icon>|<latitude>,<longitude>&markers=icon:<icon>|<latitude>,<longitude>'
+            <p>{this.state.searchCity} <img src="{`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&center=<latitude>,<longitude>&zoom=<zoom>&size=<width>x<height>&format=<format>&maptype=<MapType>&markers=icon:<icon>|<latitude>,<longitude>&markers=icon:<icon>|<latitude>,<longitude>`
           }" alt="map" /> </p>
           }
           
