@@ -21,7 +21,6 @@ class App extends React.Component {
     })
 
     let locURL = `https://eu1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&q=${this.state.searchCity}&format=json`;
-
     let resultData = await axios.get(locURL)
 
     this.setState({
@@ -31,6 +30,47 @@ class App extends React.Component {
 
     // console.log(this.state.cityData)
   }
+
+  
+  getWeather = async (e) => {
+    console.log('inside get location function')
+    e.preventDefault();
+
+    await this.setState({
+      searchCity: e.target.city.value
+    })
+
+    let weatherURL = `https://api.weatherbit.io/v2.0/forecast/daily?city=Raleigh,NC&key=${process.env.REACT_APP_WEATHERBIT_KEY}`;
+    let resultData = await axios.get(weatherURL)
+
+    this.setState({
+      cityData: resultData.data[0],
+      showData: true
+    })
+
+    // console.log(this.state.cityData)
+  }
+
+  
+  getMovie = async (e) => {
+    console.log('inside get location function')
+    e.preventDefault();
+
+    await this.setState({
+      searchCity: e.target.city.value
+    })
+
+    let movieURL = `/discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22`;
+    let resultData = await axios.get(movieURL)
+
+    this.setState({
+      cityData: resultData.data[0],
+      showData: true
+    })
+
+    // console.log(this.state.cityData)
+  }
+
 
   render() {
     return (
