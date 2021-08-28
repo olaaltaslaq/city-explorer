@@ -12,6 +12,7 @@ class App extends React.Component {
     }
   }
 
+
   getLocation = async (e) => {
     console.log('inside get location function')
     e.preventDefault();
